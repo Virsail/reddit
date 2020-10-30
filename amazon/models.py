@@ -26,7 +26,7 @@ class Profile(models.Model):
         img.save(self.picture.path)
 
 
-     def delete_profile(self):
+    def delete_profile(self):
         self.delete()
     
     def __str__(self):
@@ -37,7 +37,7 @@ class Profile(models.Model):
 # Project class
 class Projects(models.Model):
     project_title = models.CharField(max_length=300)
-    project_image = models.ImageField(upload_to = 'givenofucks/')
+    project_image = models.ImageField(default='default.jpg', upload_to = 'givenofucks/')
     project_description = models.TextField()
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     owner_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True, default='1')
