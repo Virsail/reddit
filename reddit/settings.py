@@ -88,8 +88,8 @@ TEMPLATES = [
 AUTH_PROFILE_MODULE = 'accounts.Profile'
 
 UPLOADCARE = {
-   'pub_key': '0f2a14ac11481c86e7f4',
-   'secret': '24bcb253e99d5640adab',
+   'pub_key': '1a8ba54481fa5f86c792',
+   'secret': '1a8ba54481fa5f86c792',
 }
 WSGI_APPLICATION = 'reddit.wsgi.application'
 
