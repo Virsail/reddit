@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import Http404
 from pyuploadcare.dj.models import ImageField
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
@@ -16,7 +17,11 @@ class Profile(models.Model):
     picture = models.ImageField(upload_to = 'postmalone/')
 
 
+    def save_profile(self):
+        self.save()
 
+
+# Project class
 class Projects(models.Model):
     project_title = models.CharField(max_length=300)
     project_image = models.ImageField(upload_to = 'givenofucks/')
@@ -26,7 +31,6 @@ class Projects(models.Model):
     link = models.URLField()
     
 
-        
     def save_project(self):
         self.save()
     
@@ -34,19 +38,19 @@ class Projects(models.Model):
         self.delete()
         
     @classmethod
-    def get_projects(cls):
-        projects = cls.objects.all()
-        return projects
-    
-    @classmethod
     def search_projects(cls, search_term):
         projects = cls.objects.filter(project_title__icontains=search_term)
         return projects
     
+    @classmethod
+    def get_projects(cls):
+        projects = cls.objects.all()
+        return projects
+    
     
     @classmethod
-    def get_by_author(cls, Author):
-        projects = cls.objects.filter(Author=Author)
+    def get_by_owner(cls, Owner):
+        projects = cls.objects.filter(Owner=Owner)
         return projects
     
     
@@ -64,8 +68,7 @@ class Projects(models.Model):
         return self.project_title
     
     class Meta:
-        ordering = ['-pub_date']
-        verbose_name = 'My Project'
+        verbose_name = 'Project'
         verbose_name_plural = 'Projects'
 
 
