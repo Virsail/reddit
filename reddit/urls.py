@@ -20,20 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('eventsupdate.urls')),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^logout/$', views.logout, {"next_page": '/'}), 
-    url(r'^tinymce/', include('tinymce.urls')),
-]
-
-
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('amazon.urls')),
-    
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^logout/$', views.logout, {"next_page": '/'}),
+    url(r'^tinymce/', include('tinymce.urls')),
 
 ]
