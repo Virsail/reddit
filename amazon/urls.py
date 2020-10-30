@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    url(r'^page/$', views.page, name='page'),
+    url(r'^$', views.page, name='page'),
     url(r'^registerPage/$', views.registerPage, name='registerPage'),
   
 ]
