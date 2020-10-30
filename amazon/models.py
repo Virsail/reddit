@@ -14,11 +14,16 @@ from django.db.models import ObjectDoesNotExist
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    picture = models.ImageField(upload_to = 'postmalone/')
+    picture = models.ImageField(default='default.jpg', upload_to = 'postmalone/')
 
 
     def save_profile(self):
         self.save()
+
+        img = Image.open(self.picture.path)
+        output_size = (175, 125)
+        img.circle(output_size)
+        img.save(self.picture.path)
 
 
      def delete_profile(self):
@@ -27,6 +32,7 @@ class Profile(models.Model):
     def __str__(self):
         return self.bio
 
+    
 
 # Project class
 class Projects(models.Model):
@@ -74,10 +80,6 @@ class Projects(models.Model):
     def __str__(self):
         return self.project_title
     
-    class Meta:
-        verbose_name = 'Project'
-        verbose_name_plural = 'Projects'
-
-
+    
 
 
