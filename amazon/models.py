@@ -21,6 +21,13 @@ class Profile(models.Model):
         self.save()
 
 
+     def delete_profile(self):
+        self.delete()
+    
+    def __str__(self):
+        return self.bio
+
+
 # Project class
 class Projects(models.Model):
     project_title = models.CharField(max_length=300)
