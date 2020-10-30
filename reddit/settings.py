@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'bootstrap3',
     'pyuploadcare.dj',
     'rest_framework',
-    'djangoratings',
 ]
 
 
