@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'amazon.apps.AmazonConfig',
     'tinymce',
     'bootstrap3',
-    'pyuploadcare.dj'
+    'pyuploadcare.dj',
+    'rest_framework',
 ]
 
 
