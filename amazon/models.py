@@ -22,7 +22,7 @@ class Profile(models.Model):
 
         img = Image.open(self.picture.path)
         output_size = (175, 125)
-        img.circle(output_size)
+        img.thumbnail(output_size)
         img.save(self.picture.path)
 
 
@@ -81,5 +81,4 @@ class Projects(models.Model):
         return self.project_title
     
     
-
 
