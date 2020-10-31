@@ -8,11 +8,13 @@
     <div class="col-lg-2"></div>
 
     <div class="col-lg-8 mt-4 pt-2 ">
+      <div class="migos">
+      <h2 style="text-align: center;"> Your Profile</h2>
             <div class="pb-2">
                 {% if user.profile.photo %}
-            <img src="{{ user.profile.photo.url }}" alt="" class="img-thumbnail" style="width: 100px;">
+            <img src="{{ user.profile.photo.url }}" alt="" class="img-thumbnail" style="width: 200px;">
             {% else %}
-            <img src="https://source.unsplash.com/1600x900/?nature,water" alt="" class="img-thumbnail" style="width: 100px;">
+            <img src="https://source.unsplash.com/1600x900/?nature,water" alt="" class="img-thumbnail" style="width: 200px;">
               {% endif %}
                 <h4> <span class="font-weight-bold"> Username:</span>  {{user.username}} </h4>
         <p> <span class="font-weight-bold"> Bio:</span> {{ user.profile.bio}}  </p>
@@ -22,7 +24,7 @@
         <hr>
         {% if projects %}
         {% for project_item in projects%}
-        <a href="/project/{{project_item.id}}"><img src="{{ project_item.project_image.url }}" alt="" class="img-thumbnail" style="width: 150px; height: 150px;"></a>
+        <a href="/project/{{project_item.id}}"><img src="{{ project_item.project_image.url }}" alt="" class="img-thumbnail" style="width: 250px; height: 250px;"></a>
         {% endfor %}
 
         {% else %}
@@ -33,6 +35,7 @@
     <!-- empty div -->
     <div class="col-lg-2"></div>
 
+  </div>
   </div>
 </div>
 

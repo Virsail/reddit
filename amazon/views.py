@@ -86,8 +86,8 @@ class ProfileList(APIView):
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
     current_user = request.user
-    Author = current_user
-    projects = Projects.get_by_author(Author)
+    Owner = current_user
+    projects = Projects.get_by_owner(Owner)
     
     if request.method == 'POST':
         form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -129,5 +129,5 @@ def get_project(request, id):
         raise Http404()
     
     
-    return render(request, "projects.html", {"project":project})
+    return render(request, "online/projects.html", {"project":project})
 

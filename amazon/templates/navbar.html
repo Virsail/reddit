@@ -5,8 +5,8 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="#" target="_blank">
-        <strong>WinniT</strong>
+      <a class="navbar-brand" href="{% url 'page' %}"><i class="fas fa-home"></i> 
+        <strong>WinniT Home Page</strong>
       </a>
 
       <!-- Collapse -->
@@ -21,10 +21,15 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fas fa-user-check"></i>
-              <span class="sr-only">(current)</span>
+            <a class="nav-link" href="{% url 'page' %}"><i class="fa fa-history" aria-hidden="true"></i>
+              <strong style="font-size: larger; color:greenyellow;">Recently posted Websites</strong>
+      
             </a>
         </li>
+        {% if user.is_authenticated %}
+        
+        {% endif %}
+      
         </ul>
         <!---->
 
@@ -79,40 +84,43 @@
 
             <!-- Content -->
             <div class="prefect">
-              <p>Win</p>
+              <h1>Awwards Website<br>BY VIRSAIL MBAGAYA FROM KENYA WITH 8.78</h1>
               <div class="container">
                 <div class="row">
                  <div class="col-md-3">
-                     <img src="./css/assests/facebook.png" alt="facebook logo">
-                     <p>Slice of heaven</p>
+                    <li class="nav-item">
+                      <div class="choppa">
+                      <a href="https://twitter.com/" class="nav-link" target="_blank">
+                        <i class="fab fa-twitter"></i><em>Twitter</em>
+                      </a>
+                    </div>
+                    </li>
                  </div>
                  <div class="col-md-3">
-                     <img src="./css/assests/pinterest.png" alt="pinterest icon">
-                     <p>Slice of heaven</p>
+                     <li class="nav-item">
+                      <div class="choppa">
+                      <a href="https://www.facebook.com/" class="nav-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i><em>Facebook</em>
+                      </a>
+                      </div>
+                    </li>
                  </div>
                  <div class="col-md-3">
-                     <img src="./css/assests/twitter.png" alt="twitter icon">
-                     <p>@Slice_of_heaven</p>
+                     <li class="nav-item">
+                      <div class="choppa">
+                      <a href="https://github.com/virsail/" class="nav-link border border-light rounded"
+                        target="_blank">
+                        <i class="fab fa-github mr-2"></i><em>GitHub</em>
+                      </a>
+                    </div>
+                    </li>
+                     </div>
+                    
                  </div>
-                 <div class="col-md-3">
-                     <img src="./css/assests/you_tube.png" alt="youtube icon">
-                     <p>Slice of heaven fam</p>
                  </div>
-        </div>
-        </div>
-            </div>
-            <li class="circle-note-progress style-design" data-note="">
-              <div class="circle">
-                  <div class="des">
-                      <p class="d-block mx-auto textrate">{{rating.design_average}}</p>
-                  </div>
-              </div>
-              data-note="{{rating.usability_average}}">
-              <div class="circle">
-                  <div class="des1">
-                      <p class="d-block mx-auto textrate">{{rating.usability_average}}</p>
-                  </div>
-              </div>
+                 </div>
+        
+        
             <!-- Content -->
 
           </div>
