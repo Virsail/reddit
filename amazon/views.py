@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ProfileSerializer, ProjectSerializer
 from django.http import JsonResponse
-#from .forms import EventLetterForm, NewEventForm
+from .forms import SignUpForm, NewProjectForm, ProfileUpdateForm
 
 
 # Create your views here.
