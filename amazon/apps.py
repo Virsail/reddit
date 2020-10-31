@@ -9,7 +9,7 @@ class AmazonConfig(AppConfig):
 
 
 
- def ready(self):
+def ready(self):
         import amazon.signals
        #import cmdbox.amazon.signals  # noqa
        #post_save.connect(create_user_profile, sender=User)
