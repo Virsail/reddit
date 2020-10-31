@@ -11,7 +11,10 @@ urlpatterns = [
     url(r'^project/(\d+)', views.get_project, name='project_results'),
     url(r'^new/project$', views.new_project, name='new-project'),
     url(r'^accounts/profile/$', views.user_profiles, name='profile'),
-    url(r'^api/projects/$', views.ProjectList.as_view())
+    url(r'^api/project/$', views.ProjectList.as_view()),
+    url(r'^api/profile/$', views.ProfileList.as_view()),
+    #url(r'api/project/project-id/(?P<pk>[0-9]+)/$',
+    #    views.ProjectDescription.as_view())
   
 ]
 if settings.DEBUG:

@@ -7,9 +7,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializer import ProfileSerializer, ProjectSerializer
+from .serializers import ProfileSerializer, ProjectSerializer
 from django.http import JsonResponse
 from .forms import SignUpForm, NewProjectForm, ProfileUpdateForm
+from rest_framework import status
 
 
 # Create your views here.
@@ -60,14 +61,27 @@ class ProjectList(APIView):
     def get(self, request, format=None):
         all_project = Projects.objects.all()
         serializers = ProjectSerializer(all_project, many=True)
-        return Response(serializers.data)
+        return Response(serializers.data, status=status.HTTP_201_CREATED)
         
+
 class ProfileList(APIView):
     def get(self, request, format=None):
         all_profile = Profile.objects.all()
         serializers = ProfileSerializer(all_profile, many=True)
-        return Response(serializers.data)
+        return Response(serializers.data, status=status.HTTP_201_CREATED)
 
+#class ProjectDescription(APIView):
+#    permission_classes = (IsAdminOrReadOnly,)
+#    def get_merch(self, pk):
+#        try:
+#            return ProjectMerch.objects.get(pk=pk)
+#        except ProjectMerch.DoesNotExist:
+#            return Http404
+
+#    def get(self, request, pk, format=None):
+#        merch = self.get_merch(pk)
+#        serializers = ProjectSerializer(merch)
+#        return Response(serializers.data)
 
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
@@ -103,7 +117,7 @@ def search_results(request):
         return render(request, 'online/search.html',{"message":message,"projects": searched_projects})
 
     else:
-     message = "Stay home and remember to sanitize"
+     message = "Have an amazing project you want to showcase ,post it here?"
      return render(request, 'online/search.html',{"message":message})
 
 def get_project(request, id):
