@@ -15,6 +15,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
     picture = models.ImageField(default='default.jpg', upload_to = 'postmalone/')
+    contact = models.EmailField(max_length=100, blank=True)
 
 
     def save_profile(self):

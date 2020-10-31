@@ -14,6 +14,14 @@ from .forms import SignUpForm, NewProjectForm, ProfileUpdateForm
 
 # Create your views here.
 
+
+def page(request):
+    projects = Projects.get_projects()
+    
+
+    return render(request, 'page.html', {"projects":projects})
+
+
 def registerPage(request):
      if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -29,6 +37,60 @@ def registerPage(request):
         return render(request, 'registration/registration_form.html', {'form': form})
 def page(request):
    return render(request, 'page.html')
+
+
+
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.Author = current_user
+            project.save()
+        return redirect('page')
+
+    else:
+        form = NewProjectForm()
+    return render(request, 'new-project.html', {"form": form})
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_project = Projects.objects.all()
+        serializers = ProjectSerializer(all_project, many=True)
+        return Response(serializers.data)
+        
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
+
+
+@login_required(login_url='/accounts/login/')
+def user_profiles(request):
+    current_user = request.user
+    Author = current_user
+    projects = Projects.get_by_author(Author)
+    
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.save()
+        return redirect('profile')
+        
+    else:
+        form = ProfileUpdateForm()
+    
+    return render(request, 'profiles/profile.html', {"form":form, "projects":projects})
+
+
+
+
+
 
 @login_required(login_url='/accounts/login/')
 def search_results(request):

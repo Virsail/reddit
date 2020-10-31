@@ -9,6 +9,9 @@ urlpatterns = [
     url(r'^registerPage/$', views.registerPage, name='registerPage'),
     url(r'^search/$', views.search_results, name='search_results'),
     url(r'^project/(\d+)', views.get_project, name='project_results'),
+    url(r'^new/project$', views.new_project, name='new-project'),
+    url(r'^accounts/profile/$', views.user_profiles, name='profile'),
+    url(r'^api/projects/$', views.ProjectList.as_view())
   
 ]
 if settings.DEBUG:
