@@ -44,3 +44,14 @@ def search_results(request):
      message = "Stay home and remember to sanitize"
      return render(request, 'online/search.html',{"message":message})
 
+def get_project(request, id):
+
+    try:
+        project = Projects.objects.get(pk = id)
+        
+    except ObjectDoesNotExist:
+        raise Http404()
+    
+    
+    return render(request, "projects.html", {"project":project})
+
