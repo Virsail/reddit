@@ -1,10 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response, HttpResponseRedirect
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm
-#from .models import Event, NewsLetterRecipients
+from .models import Projects, Profile
+from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer, ProjectSerializer
 from django.http import JsonResponse
 #from .forms import EventLetterForm, NewEventForm
 
