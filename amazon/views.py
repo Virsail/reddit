@@ -20,10 +20,24 @@ def registerPage(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('today-events.html')
+            return redirect('page.html')
      else:
         form = SignUpForm()
         return render(request, 'registration/registration_form.html', {'form': form})
 def page(request):
    return render(request, 'page.html')
+
+@login_required(login_url='/accounts/login/')
+def search_results(request):
+    
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_projects = Project.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'online/search.html',{"message":message,"projects": searched_projects})
+
+    else:
+     message = "Stay home and remember to sanitize"
+     return render(request, 'online/search.html',{"message":message})
 

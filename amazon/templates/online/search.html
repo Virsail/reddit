@@ -1,0 +1,26 @@
+{%extends 'online/base.html'%} 
+{% block content %}
+{% load bootstrap3 %}
+<div class="container">
+
+  <div class="row">
+    {% if projects%}
+      <h3>Found {{ projects|length }} of searched term {{message}}</h3>
+    {% else %}
+      <h3> No Project found with the name{{message}}</h3>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if projects %}
+    {% for project in projects %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{project.title}}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
