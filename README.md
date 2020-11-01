@@ -6,7 +6,7 @@
 A clone of Awwards website  that allows user to post a website and get ratings for it ,a user is also able to rate other websites from different users .You get to choose whether to visit the website of interest this application is built on Python and Django framework.
 
 ##  Live Link  
- View App site [View Site]()  
+ View App site [View Site](https://fuckthisracks.herokuapp.com/)  
   
  
 ## User Story  
