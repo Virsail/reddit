@@ -1,29 +1,30 @@
-# instagram
+# reddit
 
 [virsail mbagaya](https://github.com/virsail)  
   
 # Description  
-This is a clone of  Instagram that allows users to upload their  images ,follow other users like others users pictures and leave comments ,users also sign up and get to search for their followers.
+A clone of Awwards website  that allows user to post a website and get ratings for it ,a user is also able to rate other websites from different users .You get to choose whether to visit the website of interest this application is built on Python and Django framework.
 
 ##  Live Link  
  View App site [View Site]()  
   
  
 ## User Story  
-  
-* Sign up and login to the application  
-* Upload their pictures to the application
-* Search for different users 
-* See their profile with all their pictures they uploaded
-* Follow other users and see their activities on my timeline.  
+As a user I would like to:
+* View posted projects and their details
+* Post a project to be reviewed
+* Rate or review other users' projects
+* Search for a project 
+* View projects overall score
+* View my profile page   
   
 
   
 ## Setup and Installation  
-Clone the repository
+Clone the repository from github 
 ##### Cloning the repository:  
  ``` git clone 
- https://github.com/Virsail/Instagram.git 
+ https://github.com/Virsail/reddit.git
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
@@ -47,6 +48,11 @@ python manage.py makemigrations insta
  ```bash 
  python manage.py runserver 
 ``` 
+##### debug your model classes
+```
+python3.8 manage.py check 
+this is the fastest way to debug/check your model classes
+```
 ##### Testing the application  
  ```bash 
  python manage.py test 
@@ -59,6 +65,9 @@ Open the application on your browser `127.0.0.1:8000`.
 * [Python3.8](https://www.python.org/)  
 * [Django 1.11.7](https://docs.djangoproject.com/en/2.2/)  
 * [Heroku](https://heroku.com)  
+* HTML
+* CSS
+* JS
   
   
 ## Contact Information   
