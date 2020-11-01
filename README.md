@@ -21,6 +21,8 @@ As a user I would like to:
 ![Screenshot from 2020-11-01 23-31-18](https://user-images.githubusercontent.com/66640798/97813929-6af64d80-1c9a-11eb-8b76-1ca3f3774c81.png)
 ## Search results 
 ![Screenshot from 2020-11-01 23-36-06](https://user-images.githubusercontent.com/66640798/97814828-130c1680-1c9b-11eb-8efe-81f347daac62.png)
+## New website post
+![Screenshot from 2020-11-01 23-38-12](https://user-images.githubusercontent.com/66640798/97814863-55355800-1c9b-11eb-8503-6ec7d2778e69.png)
 
 ## Setup and Installation  
 Clone the repository from github 
