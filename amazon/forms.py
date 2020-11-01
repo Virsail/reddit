@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Projects, Profile
+from .models import Projects, Profile, Review
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib .auth.models import User
 from django import forms
@@ -29,6 +29,12 @@ class ProfileUpdateForm(forms.ModelForm):
         widgets = {
           'bio': forms.Textarea(attrs={'rows':2, 'cols':10,}),
         }
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['design', 'usability', 'content']
+
         
         
 
