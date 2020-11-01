@@ -17,9 +17,9 @@ As a user I would like to:
 * Search for a project 
 * View projects overall score
 * View my profile page   
-  
+## Home page
+![Screenshot from 2020-11-01 23-31-18](https://user-images.githubusercontent.com/66640798/97813929-6af64d80-1c9a-11eb-8b76-1ca3f3774c81.png)
 
-  
 ## Setup and Installation  
 Clone the repository from github 
 ##### Cloning the repository:  
