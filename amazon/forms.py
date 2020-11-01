@@ -16,7 +16,7 @@ class SignUpForm(UserCreationForm):
 class NewProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
-        exclude = ['Owner', 'owner_profile']
+        exclude = ['Owner', 'pub_date', 'owner_profile']
         widgets = {
           'project_description': forms.Textarea(attrs={'rows':6, 'cols':6,}),
         }

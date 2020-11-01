@@ -3,6 +3,7 @@ from django.http import Http404
 from pyuploadcare.dj.models import ImageField
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+import datetime as dt
 from django.db.models import ObjectDoesNotExist
 
 
@@ -40,6 +41,7 @@ class Projects(models.Model):
     project_title = models.CharField(max_length=300)
     project_image = models.ImageField(default='default.jpg', upload_to = 'givenofucks/')
     project_description = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     owner_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True, default='1')
     link = models.URLField()
@@ -81,5 +83,6 @@ class Projects(models.Model):
     def __str__(self):
         return self.project_title
     
-    
+    class Meta:
+        ordering = ['-pub_date']
 

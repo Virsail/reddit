@@ -25,7 +25,7 @@
         {% endif %}
         
         <a href="/project/{{project_item.id}}">
-          <div class="mask rgba-black-light">
+          <div class="mask flex-center rgba-black-strong">
               
           </div>
         </a>
@@ -34,6 +34,7 @@
       <div class="card-body pr-2 pl-2 pr-2 mr-2">
         <h5 class="card-title ml-4">{{ project_item.project_title }}</h5>
         <div class="row ml-2">
+          <div class="col-lg-6 dark-text d-flex justify-content-end"> <small> {{project_item.pub_date|date:"d /m/Y"}} </small> </div>
           
         </div>
       </div>
