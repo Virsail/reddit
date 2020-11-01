@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'reddit.wsgi.application'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    )
-}
+#REST_FRAMEWORK = {
+#    'DEFAULT_AUTHENTICATION_CLASSES': (
+#        'rest_framework.authentication.TokenAuthentication',
+#    )
+#}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

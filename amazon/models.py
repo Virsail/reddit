@@ -23,11 +23,7 @@ class Profile(models.Model):
     def save_profile(self):
         self.save()
 
-        img = Image.open(self.picture.path)
-        output_size = (175, 125)
-        img.thumbnail(output_size)
-        img.save(self.picture.path)
-
+       
 
     def delete_profile(self):
         self.delete()

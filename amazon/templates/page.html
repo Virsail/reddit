@@ -1,12 +1,11 @@
-{%extends 'online/base.html'%}
-
+{% extends 'online/base.html' %}
 {% block content %}
 
 <div class="container-fluid">
 <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1">
-    <h4 class="display-6 font-weight-bold" style="font-size:40px;"><em>Sites of the day</em> </h4>
+    <h4 class="display-6 font-weight-bold" style="font-size:40px;">Sites of the day </h4>
 </div>
-{<div class="row pl-2 pr-2 ml-1 mr-1">
+<div class="row pl-2 pr-2 ml-1 mr-1">
 {% for project_item in projects %}
 <div class="col-lg-4">
 <div class="card-deck">
@@ -43,6 +42,8 @@
         BY {{project.Owner|upper}} </small>
       </div>
     </div>
+
+    
   
 
   </div>
@@ -51,4 +52,8 @@
 </div>
 </div>
 
-{% endblock %}}
+{% endblock %}
+
+
+
+

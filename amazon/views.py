@@ -16,8 +16,8 @@ from rest_framework import status
 
 # Create your views here.
 
-
 def page(request):
+    
     projects = Projects.get_projects()
     
 
