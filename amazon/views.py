@@ -117,7 +117,7 @@ def search_results(request):
         return render(request, 'online/search.html',{"message":message,"projects": searched_projects})
 
     else:
-     message = "Have an amazing project you want to showcase ,post it here?"
+     message = ",Have an amazing website you want to showcase ,post it here"
      return render(request, 'online/search.html',{"message":message})
 
 def get_project(request, id):

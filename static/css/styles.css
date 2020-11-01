@@ -31,6 +31,17 @@ h1 {
 h2 {
     font-size: larger;
 }
+#chapa {
+    background-color: #1C2331;
+}
+#chapa1 {
+    background-color: #1C2331;
+}
+.jok {
+    color: yellow;
+    background-color: white;
+}
+
 .germany {
     color: white;
 }
@@ -46,7 +57,15 @@ h2 {
     font-size-adjust: auto;
 }
 
-.choppa {
+#choppa {
     color: white;
+    background-color:white;
+}
+#choppa1 {
+    background-color: yellow;
+
+}
+#choppa2 {
     background-color: white;
+
 }
