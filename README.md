@@ -26,7 +26,8 @@ As a user I would like to:
 ## Profile page
 ![Screenshot from 2020-11-01 23-41-02](https://user-images.githubusercontent.com/66640798/97814942-d5f45400-1c9b-11eb-989d-a63bced58361.png)
 ## Login page 
-![Screenshot from 2020-11-01 23-41-02](https://user-images.githubusercontent.com/66640798/97814942-d5f45400-1c9b-11eb-989d-a63bced58361.png)
+![Screenshot from 2020-11-01 23-44-08](https://user-images.githubusercontent.com/66640798/97815074-9e39dc00-1c9c-11eb-9e64-58023dd71e6b.png)
+
 
 ## Setup and Installation  
 Clone the repository from github 
