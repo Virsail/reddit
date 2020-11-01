@@ -12,7 +12,7 @@
         <div class="view view-cascade overlay">
           {% if project.project_image %}
           <img class="card-img-top" src="{{project.project_image.url}}" alt="{{ project.project_name }}"
-           style="max-height: 400px;">
+           style="max-height: 500px;">
           {% else %}
           <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900"
             alt="{{ project.project_name }}">
@@ -37,11 +37,11 @@
               <button type="button" class="btn btn-dark font-weight-bold px-3">Go to website</button></a>
           </div>
           <div class="mt-2 pt-2">
-            <h4>Ratings</h4>
+            <h4>Ratings<i class="fa fa-star"></i></h4>
           </div>
 
           <div class="row">
-            <div class="col-lg-6 dark-text"> <small>Submission date : {{project.pub_date|date:"d /m/Y"}} </small> </div>
+            <div class="col-lg-6 dark-text"> <strong>Submission date : {{project.pub_date|date:"d /m/Y"}} </srtong> </div>
           </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="card-footer bg-light">
           <h5 class="pt-2"></h5>
             BY {{project.Owner|upper}} <span class="ml-1 mr-1">
-            <small class="font-weight-bold ml-2"><img src="{{ project.Owner.profile.picture.url }}" alt=""class="img-thumbnail " style="width: 70px;">
+            <small class="font-weight-bold ml-2"><img src="{{ project.Owner.profile.picture.url }}" alt=""class="img-thumbnail " style="width: 50px;">
         </div>
 
       </div>

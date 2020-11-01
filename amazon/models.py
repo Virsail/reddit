@@ -86,3 +86,26 @@ class Projects(models.Model):
     class Meta:
         ordering = ['-pub_date']
 
+class Review(models.Model):
+    review = ((1, '1'),(2, '2'),(3, '3'),(4, '4'),(5, '5'),)
+    design = models.IntegerField(choices=review, default=0, blank=True)
+    usability = models.IntegerField(choices=review, blank=True)
+    content = models.IntegerField(choices=review, blank=True)
+    score = models.FloatField(default=0, blank=True)
+    design_average = models.FloatField(default=0, blank=True)
+    usability_average = models.FloatField(default=0, blank=True)
+    content_average = models.FloatField(default=0, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='reviewer')
+    projects = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='reviews', null=True)
+
+    def save_review(self):
+        self.save()
+
+    @classmethod
+    def get_review(cls, id):
+        reviews = Review.objects.filter(project_id=id).all()
+        return reviews
+
+    def __str__(self):
+        return f'{self.project} Review'
+

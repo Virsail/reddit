@@ -50,13 +50,13 @@ def new_project(request):
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
-            project.Author = current_user
+            project.Owner = current_user
             project.save()
         return redirect('page')
 
     else:
         form = NewProjectForm()
-    return render(request, 'new-project.html', {"form": form})
+    return render(request, 'online/new-project.html', {"form": form})
 
 class ProjectList(APIView):
     def get(self, request, format=None):
