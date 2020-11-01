@@ -17,6 +17,7 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     picture = models.ImageField(default='default.jpg', upload_to = 'postmalone/')
     contact = models.EmailField(max_length=100, blank=True)
+    name = models.CharField(blank=True, max_length=100)
 
 
     def save_profile(self):
@@ -43,7 +44,7 @@ class Projects(models.Model):
     project_description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
-    owner_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True, default='1')
+  # owner_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True)
     link = models.URLField()
     
 
