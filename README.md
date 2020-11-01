@@ -23,6 +23,8 @@ As a user I would like to:
 ![Screenshot from 2020-11-01 23-36-06](https://user-images.githubusercontent.com/66640798/97814828-130c1680-1c9b-11eb-8efe-81f347daac62.png)
 ## New website post
 ![Screenshot from 2020-11-01 23-38-12](https://user-images.githubusercontent.com/66640798/97814863-55355800-1c9b-11eb-8503-6ec7d2778e69.png)
+## Profile page
+![Screenshot from 2020-11-01 23-41-02](https://user-images.githubusercontent.com/66640798/97814942-d5f45400-1c9b-11eb-989d-a63bced58361.png)
 
 ## Setup and Installation  
 Clone the repository from github 
