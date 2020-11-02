@@ -40,7 +40,6 @@ class Projects(models.Model):
     project_description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
-  # owner_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True)
     link = models.URLField()
     
 
