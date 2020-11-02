@@ -20,7 +20,7 @@ class TestProfile(TestCase):
 class ProjectsTest(TestCase):
     def setUp(self):
         self.user = User.objects.create(username='virsail')
-        self.project = Projects.objects.create(project_title='test post',  project_image='https://ucarecdn.com/0ccf61ff-508e-46c6-b713-db51daa6626e', project_description='desc',Owner=self.user, link='http://ur.coml')
+        self.project = Projects.objects.create(project_title='test post',  project_image='https://ucarecdn.com/0ccf61ff-508e-46c6-b713-db51daa6626e', project_description='desc',Owner=self.user, link='http://github.com')
 
     def test_instance(self):
        #self.assertTrue(isinstance(self.projects, Project))
