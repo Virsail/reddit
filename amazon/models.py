@@ -102,6 +102,7 @@ class Review(models.Model):
         reviews = Review.objects.filter(project_id=id).all()
         return reviews
 
+    
     def __str__(self):
-        return f'{self.project} Review'
-
+        return self.project(Review)
+    
